@@ -41,9 +41,9 @@ def configure_log(configs, unique_log_dir=False):
     os.makedirs(log_dir, exist_ok=True)
 
     # Log commit number.
-    repo = git.Repo(search_parent_directories=True)
-    sha = repo.head.object.hexsha
-    configs['git_commit_sha'] = sha
+    # repo = git.Repo(search_parent_directories=True)
+    # sha = repo.head.object.hexsha
+    configs['git_commit_sha'] = "qwq"
 
     # save configs
     logz.configure_output_dir(log_dir)

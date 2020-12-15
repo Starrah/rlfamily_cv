@@ -12,9 +12,9 @@ from rl.tools.utils.misc_utils import zipsame
 
 # Limit the number threads used by tensorflow
 import tensorflow as tf
-num_threads=8
-tf.config.threading.set_inter_op_parallelism_threads(num_threads)
-tf.config.threading.set_intra_op_parallelism_threads(num_threads)
+# num_threads=8
+# tf.config.threading.set_inter_op_parallelism_threads(num_threads)
+# tf.config.threading.set_intra_op_parallelism_threads(num_threads)
 
 
 def func(tp):
@@ -71,9 +71,10 @@ def main(env, configs_name, range_names, base_algorithms, n_processes):
             tp['general']['exp_name'] = '-'.join(value_strs)
             tps.append(tp)
 
-    with Pool(processes=n_processes, maxtasksperchild=1) as p:  # None for using all the cpus available
-        p.map(main_func, tps, chunksize=1)
+    # with Pool(processes=n_processes, maxtasksperchild=1) as p:  # None for using all the cpus available
+    #     p.map(main_func, tps, chunksize=1)
         # p.map(func, tps, chunksize=1)
+    main_func(tps[0])
 
 
 if __name__ == '__main__':

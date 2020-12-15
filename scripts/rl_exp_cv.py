@@ -33,7 +33,7 @@ def main(c):
     env, seed = ps.general_setup(c['general'])
 
     # Setup pdb mode.
-    setup_pdb(c['general']['pdb_mode'])
+    # setup_pdb(c['general']['pdb_mode'])
 
     # Create objects for defining the algorithm
     policy = ps.create_policy(env, seed, c['policy'])
